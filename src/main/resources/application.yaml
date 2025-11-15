@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: cloudeagle-dropsync
+
+dropbox:
+  base-url: https://api.dropboxapi.com
+  endpoints:
+    team-info: /2/team/get_info
+    members-list: /2/team/members/list
+    sign-in-events: /2/team_log/get_events
