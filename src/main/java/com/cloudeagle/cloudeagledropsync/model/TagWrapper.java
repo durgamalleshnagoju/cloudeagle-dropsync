@@ -6,15 +6,13 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Map;
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class EventDetails {
+public class TagWrapper {
+
     @JsonProperty(".tag")
     private String tag;
-    private Map<String, Object> additionalProperties;
 }
 

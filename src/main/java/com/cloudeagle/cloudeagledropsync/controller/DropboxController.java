@@ -1,7 +1,6 @@
 package com.cloudeagle.cloudeagledropsync.controller;
 
 import com.cloudeagle.cloudeagledropsync.model.MembersListResponse;
-import com.cloudeagle.cloudeagledropsync.model.SignInEventsRequest;
 import com.cloudeagle.cloudeagledropsync.model.SignInEventsResponse;
 import com.cloudeagle.cloudeagledropsync.model.TeamInfoResponse;
 import com.cloudeagle.cloudeagledropsync.service.DropboxService;
@@ -28,9 +27,10 @@ public class DropboxController {
         return ResponseEntity.ok(response);
     }
 
-    @PostMapping("/signin-events")
-    public ResponseEntity<SignInEventsResponse> getSignInEvents(@RequestBody SignInEventsRequest request, @RequestHeader String token) {
-        SignInEventsResponse response = dropboxService.getSignInEvents(request, token);
+    @GetMapping("/signin-events")
+    public ResponseEntity<SignInEventsResponse> getSignInEvents(
+            @RequestParam Integer limit,@RequestParam String tag,@RequestParam String startTime,@RequestParam String endTime,@RequestHeader String token) {
+        SignInEventsResponse response = dropboxService.getSignInEvents(limit, tag, startTime, endTime, token);
         return ResponseEntity.ok(response);
     }
 }

@@ -8,5 +8,5 @@ import com.cloudeagle.cloudeagledropsync.model.TeamInfoResponse;
 public interface DropboxService {
     TeamInfoResponse getTeamInfo(String token);
     MembersListResponse getMembersList(String token);
-    SignInEventsResponse getSignInEvents(SignInEventsRequest request, String token);
+    SignInEventsResponse getSignInEvents(Integer limit, String tag, String startTime, String endTime, String token);
 }
